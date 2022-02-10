@@ -1,0 +1,66 @@
+--#1
+/*
+ends with a or l
+*/
+SELECT name FROM world
+ WHERE name LIKE '%a' OR name LIKE '%l';
+
+--#2
+SELECT name, population
+  FROM world
+ WHERE population BETWEEN 1000000 AND 1250000
+
+
+--#3
+/*
+starts with Al
+*/
+SELECT name, population
+      FROM world
+      WHERE name LIKE "Al%"
+
+
+--#4
+/*
+
+*/
+SELECT name,length(name)
+FROM world
+WHERE length(name)=5 and region='Europe'
+
+--#5
+/*
+
+*/
+SELECT name, population/area
+  FROM world
+ WHERE name IN ('China', 'Nigeria', 'France', 'Australia')
+
+--#6
+/*
+This is inclusive of 1980 and 1989
+*/
+SELECT * FROM nobel WHERE subject = 'Literature' and yr BETWEEN 1980 AND 1989;
+
+--#7
+/*
+Multiple and/ors
+*/
+SELECT * FROM nobel WHERE (subject='Physics' AND yr=1980) OR (subject='Chemistry' AND yr=1984);
+
+--#8
+/*
+Two single quotes to be a quote
+
+*/
+SELECT * FROM nobel WHERE winner='Eugene O''Neill'
+
+--#9
+/*
+
+*/
+
+--#10
+/*
+
+*/
